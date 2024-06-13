@@ -2,13 +2,15 @@
 <form method="post" class="form">
   <h3>Enter the Chat Room</h3>
   <div class="form-wrapper">
-    <label for="name">Name:</label>
-    <input
-      type="text"
-      placeholder="Pick a name!"
-      name="name"
-      value="{{name}}"
-    />
+    <div class="name-wrapper">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        placeholder="Type your name!"
+        name="name"
+        value="{{name}}"
+      />
+    </div>
     <div class="join">
       <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
       <button type="submit" name="join" class="join-btn">Join</button>
@@ -17,5 +19,10 @@
       Create a room
     </button>
   </div>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
 </form>
 {% endblock %}
