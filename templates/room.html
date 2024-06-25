@@ -43,4 +43,8 @@
     message.value = "";
   };
 </script>
-{% endblock %}
+{% for msg in messages %}
+<script>
+  createMessage("{{msg.name}}", "{{msg.message}}");
+</script>
+{% endfor %} {% endblock %}
